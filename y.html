@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Kishika Gupta</title>
+</head>
+<body>
+  <h1>JAVASCRIPT WITH KISHI</h1>
+  <h2>I will give a brief introduction about JavaScript Concepts</h2>
+  <p id="Result"></p>
+  <p id="arrayResult"></p>
+  <p id="dateResult"></p>
+  <p id="functionResult"></p>
+  
+  <script>
+
+const exampleString = "Hello, World!";
+
+// String Methods
+// 1. Get the length of the string using length
+let stringLength = exampleString.length;
+document.getElementById("Result").innerHTML += "Length of String: " + stringLength + "<br>";
+
+// 2. Convert the string to uppercase using toUpperCase()
+let uppercaseString = exampleString.toUpperCase();
+document.getElementById("Result").innerHTML += "Uppercase: " + uppercaseString + "<br>";
+
+// 3. Find the index of a substring using indexOf()
+let indexOfWorld = exampleString.indexOf("World");
+document.getElementById("Result").innerHTML += "Index of 'World': " + indexOfWorld + "<br>";
+
+// 4. Get a substring using slice()
+let substring = exampleString.slice(7);
+document.getElementById("Result").innerHTML += "Substring from index 7: " + substring + "<br>";
+
+// 5. Replace a part of the string using replace()
+let replacedString = exampleString.replace("Hello", "Hey");
+document.getElementById("Result").innerHTML += "Replaced: " + replacedString + "<br>";
+
+const sampleNumber = 44.74;
+
+    // Number Methods
+    // 1. Convert the number to a string with a fixed number of decimal places using toFixed()
+    let fixedNumber = sampleNumber.toFixed(2);
+    document.getElementById("Result").innerHTML += "Fixed Number: " + fixedNumber + "<br>";
+
+    // 2. Convert the number to a string using toString()
+    let numberAsString = sampleNumber.toString();
+    document.getElementById("Result").innerHTML += "Number as String: " + numberAsString + "<br>";
+
+    // 3. Check if a number is an integer using Number.isInteger()
+    let isInteger = Number.isInteger(sampleNumber);
+    document.getElementById("Result").innerHTML += "Is Integer: " + isInteger + "<br>";
+
+    // 4. Round a number up to the nearest integer using Math.ceil()
+    let roundedUp = Math.ceil(sampleNumber);
+    document.getElementById("Result").innerHTML += "Rounded Up: " + roundedUp + "<br>";
+
+    // 5. Generate a random number between 0 (inclusive) and 1 (exclusive) using Math.random()
+    let random = Math.random();
+    document.getElementById("Result").innerHTML += "Random Number: " + random + "<br>";
+
+    const fruits = ["KIWI", "GRAPES", "BANANA", "Mango"];
+
+    // Array Methods for Fruits
+    // 1. Convert array to a comma-separated string using toString()
+    let fruitsAsString = fruits.toString();
+    document.getElementById("Result").innerHTML += "Fruits as String: " + fruitsAsString + "<br>";
+
+    // 2. Join array elements with a custom separator using join()
+    let joinedFruits = fruits.join(" - ");
+    document.getElementById("Result").innerHTML += "Joined Fruits: " + joinedFruits + "<br>";
+
+    // Array Methods for Numbers
+    const numbers = [14, 24, 4, 44, 34];
+
+    // 1. Get the length of the array using length
+    let length = numbers.length;
+    document.getElementById("Result").innerHTML += "Length of Numbers: " + length + "<br>";
+
+    // 2. Get the index of a specific value using indexOf()
+    let index = numbers.indexOf(50);
+    document.getElementById("Result").innerHTML += "Index of 50: " + index + "<br>";
+
+    // 3. Add an element to the end of the array using push()
+    numbers.push(30);
+    document.getElementById("Result").innerHTML += "Numbers after push: " + numbers + "<br>";
+
+    const currentDate = new Date(2021, 3, 24, 14, 4, 0);
+    let dateOutput = "";
+
+    // Date Methods
+    // 1. Get the full date as a string using toDateString()
+    dateOutput += "Full Date: " + currentDate.toDateString() + "<br>";
+
+    // 2. Get the hours of the current date using getHours()
+    dateOutput += "Hours: " + currentDate.getHours() + "<br>";
+
+    // 3. Get the minutes of the current date using getMinutes()
+    dateOutput += "Minutes: " + currentDate.getMinutes() + "<br>";
+
+    // 4. Get the month of the current date using getMonth()
+    dateOutput += "Month: " + currentDate.getMonth() + "<br>";
+
+    // 5. Get the full year of the current date using getFullYear()
+    dateOutput += "Year: " + currentDate.getFullYear() + "<br>";
+
+    document.getElementById("dateResult").innerHTML = dateOutput;
+
+    // Function Methods
+    function greet(name) {
+      return "Hello, " + name + "!";
+    }
+
+    let functionOutput = "";
+
+    // 1. Applying call() to change the context of a function
+    functionOutput += "<b>1. Using call() Method:</b><br>";
+    
+    function saySomething(message) {
+      return this.name + " says: " + message;
+    }
+
+    let person = { name: "Kishi" };
+    let message = saySomething.call(person, "Hello there!");
+    functionOutput += message + "<br><br>";
+
+    // 2. Applying bind() to create a new function with a fixed context
+    functionOutput += "<b>2. Using bind() Method:</b><br>";
+    
+    function introduce() {
+      return "My name is " + this.name + ".";
+    }
+
+    let person2 = { name: "Cookie" };
+    let introduceCookie = introduce.bind(person2);
+    functionOutput += introduceCookie() + "<br>";
+
+    document.getElementById("functionResult").innerHTML = functionOutput;
+
+  </script>
+</body>
+</html>
